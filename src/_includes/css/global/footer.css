@@ -1,0 +1,44 @@
+.site-footer .site-footer__upper{
+    color: var(--color-light);
+}
+
+.site-footer .site-footer__upper .brand_mark{
+    fill: var(--color-slate);
+    width: 8rem;
+    /* display: block; */
+}
+
+.site-footer .site-footer__upper h4{
+    color: var(--color-slate);
+}
+
+.site-footer .site-footer__lower{
+    color: var(--color-slate);
+}
+
+.site-footer .site-footer__lower p{
+    margin: 0;
+}
+
+.site-footer a{
+    text-decoration: none;
+}
+
+
+.site-footer a:hover{
+    color: var(--color-lightGold);
+}
+
+.site-footer__upper .grouped{
+    gap: var(--size-600);
+}
+
+.site-footer ul{
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-footer__upper .details{
+    --flow-space: .6em;
+}

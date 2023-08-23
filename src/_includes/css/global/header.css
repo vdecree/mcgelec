@@ -21,6 +21,65 @@
     list-style: none;
 }   
 
+.nav li{
+    position: relative;
+}
+
+.nav .dropdown ul{
+    border-radius: var(--radius-small);
+    background-color: var(--color-dark);
+    padding: var(--size-200) var(--size-400);
+}
+
+.nav .dropdown ul li:not(:last-child){
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+.nav .dropdown ul li a::after{
+    content: "\2192";
+    padding-right: 0;
+    transition: all 0.2s;
+    color: var(--color-lightGold);
+}
+
+.nav .dropdown ul li a:hover::after{
+    content: "\2192";
+    padding-right: 3em;
+}
+
+.nav .dropdown ul li a:hover{
+    color: var(--color-lightGold);
+}
+
+.nav .dropdown ul:hover li a:not(:hover){
+    color: var(--color-light);
+}
+
+.nav .dropdown ul li a{
+    display: flex;
+    transition: all 0.2s;
+    justify-content: space-between;
+    padding: .6rem 0;
+    color: var(--color-lightSlate);
+}
+
+.nav .dropdown .dropdown-pork{
+    position: absolute;
+    top: 100%;
+    width: 100vw;
+    max-width: 20rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-top: var(--size-400);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nav .dropdown:hover .dropdown-pork{
+    visibility: visible;
+    opacity: 1;
+}
+
 .site-header__navigation ul a{
     color: var(--color-light);
     text-decoration: none;

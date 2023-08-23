@@ -1,0 +1,15 @@
+<section class="hero [ relative text-light ]">
+    <div class="wrapper [ max-w-7xl ]">
+        <div class="hero__content [ text-center ]">
+            <img src="{{ block.image }}" alt="{{ block.alt }}">
+            <span class="[ flow ]"><h1 class="text-1100">{{ block.title }}</h1>
+            {{ block.content | markdown | safe }}
+            {% for button in block.buttons %}
+            <a href="{{ button.link }}" class="button">
+                {{ button.label }}
+            </a>
+            {% endfor %}
+            </span>
+        </div>
+    </div>
+</section>

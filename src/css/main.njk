@@ -1,0 +1,21 @@
+---
+permalink: /css/main.css
+sitemapIgnore: true
+---
+{%- set css -%}
+  {% include '../_includes/css/utility/reset.css' %}
+  {% include '../_includes/css/utility/visibility.css' %}
+  {% include '../_includes/css/utility/wrapper.css' %}
+  {% include '../_includes/css/utility/button.css' %}
+
+  {% include '../_includes/css/composition/grid.css' %}
+  {% include '../_includes/css/composition/stack.css' %}
+  {% include '../_includes/css/composition/flow.css' %}
+
+  {% include '../_includes/css/global/type.css' %}
+  {% include '../_includes/css/global/tokens.css' %}
+  {% include '../_includes/css/global/header.css' %}
+  {% include '../_includes/css/global/footer.css' %}
+  {% include '../_includes/css/global/hero.css' %}
+{%- endset -%}
+{{ css | cssmin | safe }}

@@ -1,0 +1,31 @@
+.site-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.site-header__logo a{
+    display: block;
+}
+
+.site-header__logo svg{
+    width: 2.5rem;
+    height: auto;
+}
+
+.site-header__navigation ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}   
+
+.site-header__navigation ul a{
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+.site-header__navigation .nav{
+    gap: var(--size-500);
+}

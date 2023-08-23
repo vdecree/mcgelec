@@ -1,0 +1,97 @@
+local_backend: true
+backend:
+  name: git-gateway
+  branch: main
+# publish_mode: editorial_workflow
+media_folder: 'src/uploads'
+public_folder: '/uploads'
+
+theme: &THEME
+  label: 'Theme'
+  name: 'theme'
+  widget: 'select'
+  options: ['light', 'nile']
+  required: false
+
+blocks: &BLOCKS
+  label: 'Blocks'
+  name: 'blocks'
+  widget: 'list'
+  types:
+    - label: 'Text'
+      name: 'text'
+      widget: object
+      fields:
+        - { label: 'Content', name: 'content', widget: 'markdown' }
+        - { label: 'Spacing Top', name: 'spacingtop', widget: 'string', required: false }
+        - { label: 'Spacing Bottom', name: 'spacingbottom', widget: 'string', required: false }
+    - label: 'Hero'
+      name: 'hero'
+      widget: object
+      fields:
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: 'Content', name: 'content', widget: 'markdown' }
+        - { label: 'Image', name: 'image', widget: 'image' }
+        - { label: 'Image Alt', name: 'alt', widget: 'string' }
+        - label: 'Buttons'
+          name: 'buttons'
+          widget: 'list'
+          collapsed: true
+          required: false
+          fields:
+            - { label: 'Label', name: 'label', widget: 'string' }
+            - { label: 'Link', name: 'link', widget: 'string' }
+
+
+meta: &META
+  label: 'Meta'
+  name: 'meta'
+  widget: 'object'
+  collapsed: true
+  required: false
+  fields:
+    - { label: 'Title', name: 'title', widget: 'string', required: false }
+    - { label: 'Description', name: 'desc', widget: 'string', required: false }
+    - { label: 'Author', name: 'author', widget: 'string', required: false }
+
+social: &SOCIAL
+  label: 'Social'
+  name: 'social'
+  widget: 'object'
+  collapsed: true
+  required: false
+  fields:
+    - { label: 'Image', name: 'image', widget: 'image', required: false }
+
+navigation: &NAVIGATION
+  label: 'Navigation'
+  name: 'eleventyNavigation'
+  widget: 'object'
+  collapsed: true
+  required: false
+  fields:
+    - { label: 'Key', name: 'key', widget: 'string', required: false }
+    - { label: 'Parent', name: 'parent', widget: 'string', required: false }
+    - { label: 'Icon', name: 'icon', widget: 'image', required: false }
+    - { label: 'Image', name: 'image', widget: 'image', required: false }
+    - { label: 'Excerpt', name: 'excerpt', widget: 'string', required: false }
+    - { label: 'Order', name: 'order', widget: 'number', required: false }
+
+collections:
+  - label: 'Pages'
+    name: 'pages'
+    folder: 'src'
+    identifier_field: 'title'
+    create: true
+    extension: 'md'
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    nested:
+      depth: 4
+      summary: '{{title}}'
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'layouts/page.njk' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - *BLOCKS
+      - *META
+      - *SOCIAL
+      - *NAVIGATION

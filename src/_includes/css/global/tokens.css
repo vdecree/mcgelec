@@ -84,6 +84,10 @@
   max-width: 80rem
 }
 
+.flex-1 {
+  flex: 1 1 0%
+}
+
 .basis-full {
   flex-basis: 100%
 }
@@ -161,5 +165,19 @@
 
   .md\:gap-500 {
     gap: clamp(1.31rem, calc(0.95rem + 1.83vw), 2.25rem)
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex-initial {
+    flex: 0 1 auto
+  }
+
+  .lg\:flex-row {
+    flex-direction: row
+  }
+
+  .lg\:items-center {
+    align-items: center
   }
 }

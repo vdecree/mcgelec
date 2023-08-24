@@ -2,4 +2,4 @@
 
 # MCG Electrical
 
-Built using 11ty and Netlify CMS, utilising Blyth CSS.
+Built using 11ty (nunjucks *.njk) and Netlify CMS, utilising Blyth CSS.

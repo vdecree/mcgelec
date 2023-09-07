@@ -1,11 +1,101 @@
- .site-header__navigation ul{
+/* ******************************** */
+/* Note to self */
+/* ******************************** */
+
+/* Objective of splitting the navigation css away from the header is to clean up the code and eable me to start mobile first utilising aria-expanded ONLY when absolutely needed so that I can restore an open mobile menu if the screen is resized back to desktop state. Aria should only handle the visibility of the mobile menu itself */
+
+/* Comment out all styles and start again. 
+1) code mobile menu so that it's styled correctly for mobile (as if its open)
+2) code in the change in styles for desktop viewport size (removes mobile specific styles)
+3) use the mobile menu aria state to make the mobile menu visible / hidden (so if left open and resized i want the navigation to look normal on desktop).  */ 
+
+/* ******************************** */
+/* Note to self */
+/* ******************************** */
+
+/* Basic menu resets */
+/* .site-header__navigation ul{
     margin: 0;
     padding: 0;
     list-style: none;
+}  
+
+.site-header__navigation ul a{
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+.nav li{
+    position: relative;
+} */
+
+/* Core mobile styles */
+/* .site-header__navigation nav{
+    display: grid;
+}
+
+.nav .dropdown ul li a:hover{
+    color: var(--color-lightGold);
+}
+
+.nav .dropdown ul:hover li a:not(:hover){
+    color: var(--color-light);
+}
+
+.site-header{
+    background-color: var(--color-dark);
+    padding-bottom: var(--size-400);
+}
+
+.site-header .dropdown ul{
+    border-radius: var(--radius-small);
+    margin-top: var(--size-400);
+    overflow: hidden;
+}
+
+.site-header .dropdown{
+    background-color: var(--color-lightSlate);
+    padding: var(--size-300);
+    color: var(--color-dark);
+    border-radius: var(--radius-small);
+}
+
+.site-header .dropdown>a{
+    color: var(--color-dark);
+}
+
+.site-header .dropdown ul a{
+    padding: var(--size-300);
+    display: block;
+    background-color: var(--color-slate);
+}
+
+.site-header .dropdown ul a:hover{
+    background-color: var(--color-secondary);
+} */
+
+/* target desktop removal of mobile styles */
+@media (min-width:1024px) {
+    .site-header{
+        background: none;
+    }
+}
+
+.site-header__navigation ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
 }   
 
-.site-header__navigation nav{
+/* this is our nav element */
+.site-header__navigation{
     display: grid;
+    grid-template-rows: 0fr;
+}
+
+[aria-expanded=true] .site-header__navigation {
+    grid-template-rows: 1fr;
 }
 
 .site-header[aria-expanded=true]{
@@ -40,16 +130,6 @@
     background-color: var(--color-secondary);
 }
 
-/* **************************** */
-/* restore these once completion of the mobile styling */
-/* **************************** */
-
-
-
-/* **************************** */
-/* End Restore point */
-/* **************************** */
-
 .nav li{
     position: relative;
 }
@@ -64,8 +144,7 @@
 
 .nav .dropdown ul:hover li a:not(:hover){
     color: var(--color-light);
-} 
-
+}
 
 @media (min-width:1024px) {
     .nav .dropdown ul{
@@ -106,6 +185,10 @@
         padding: .6rem 0;
         color: var(--color-lightSlate);
     }
+
+    .site-header__navigation ul{
+        overflow: visible;
+    }
 }
 
 .nav .dropdown:hover .dropdown-pork{
@@ -128,7 +211,7 @@
     display:inline-block;
     width:24px;
     height:24px;
-    -webkit-appearance:none;
+    appearance:none;
     outline:0;
     border:none;
     background:0 0;

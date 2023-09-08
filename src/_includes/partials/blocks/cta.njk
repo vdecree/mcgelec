@@ -1,0 +1,14 @@
+<section class="calltoaction" data-theme="{{ block.theme }}" style="background-color: var(--color-{{ block.background }});">
+    <div class="wrapper">
+        <div class="cta [ stack gap-900 bg-primary text-light p-600 justify-between items-center ]">
+            <div class="calltoaction__content [ flow ]">
+                <p class="[ text-600 ]">{{ block.title }}</p>
+                <p>{{ block.text }}</p>
+            </div>
+
+            <div class="calltoaction__button">
+                <a href="{{ block.button.url }}" class="button" data-type="warm-slate">{{ block.button.label }}</a>
+            </div>
+        </div>
+    </div>
+</section>

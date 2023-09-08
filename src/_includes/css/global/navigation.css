@@ -189,6 +189,11 @@
     .site-header__navigation ul{
         overflow: visible;
     }
+
+    .site-header[aria-expanded="true"]{
+        padding-bottom: 0;
+        background: none;
+    }
 }
 
 .nav .dropdown:hover .dropdown-pork{

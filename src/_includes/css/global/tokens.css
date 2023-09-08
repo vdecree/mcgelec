@@ -6,6 +6,7 @@
   --color-winterSlate: #E1E6E6;
   --color-lightGold: #B79554;
   --color-slate: #77878A;
+  --color-warmSlate: #485759;
   --color-lightSlate: #a6bcc0;
   --size-0: 0;
   --size-200: clamp(0.31rem, calc(0.14rem + 0.85vw), 0.75rem);
@@ -96,6 +97,10 @@
   flex-direction: column
 }
 
+.content-center {
+  align-content: center
+}
+
 .items-center {
   align-items: center
 }
@@ -104,9 +109,22 @@
   justify-content: space-between
 }
 
+.gap-900 {
+  gap: clamp(5.25rem, calc(3.79rem + 7.32vw), 9.00rem)
+}
+
 .bg-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(23 27 28 / var(--tw-bg-opacity))
+}
+
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(145 106 61 / var(--tw-bg-opacity))
+}
+
+.p-600 {
+  padding: clamp(2.00rem, calc(1.61rem + 1.95vw), 3.00rem)
 }
 
 .py-400 {
@@ -133,6 +151,10 @@
 
 .text-300 {
   font-size: clamp(0.90rem, calc(1.04rem + -0.18vw), 1.00rem)
+}
+
+.text-600 {
+  font-size: clamp(1.42rem, calc(1.31rem + 0.59vw), 1.76rem)
 }
 
 .text-light {

@@ -12,4 +12,22 @@ blocks:
     buttons:
       - label: Work With Us
         link: "#"
+  - type: text
+    eyebrow: This is a test eyebrow
+    content: |-
+      \# This is an exmaple heading
+
+      and some content below.
+    buttons:
+      - label: Test Button
+        link: "#"
+  - type: cta
+    title: Looking for an expert electrical contractor you can trust?
+    text: Some text here
+    button:
+      label: Lets have a chat
+      url: "#"
+      theme: slate
+    theme: light
+    background: winterSlate
 ---

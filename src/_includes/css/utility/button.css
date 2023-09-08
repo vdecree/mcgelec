@@ -11,3 +11,11 @@
 .button:hover{
     background-color: var(--color-lightGold);
 }
+
+.button[data-type="warm-slate"]{
+    background-color: var(--color-warmSlate);
+}
+
+.button[data-type="warm-slate"]:hover{
+    background-color: var(--color-dark);
+}

@@ -18,6 +18,7 @@ module.exports = {
       winterSlate: '#E1E6E6',
       lightGold: '#B79554',
       slate: '#77878A',
+      warmSlate: '#485759',
       lightSlate: '#a6bcc0',
     },
     borderRadius: {

@@ -1,0 +1,11 @@
+<section class="text [ block ]">
+    <div class="wrapper">
+        {% if eyebrow %}<p class="eyebrow">{{ block.eyebrow }}</p>{% endif %}
+        {{ block.content | markdown | safe }}
+        {% for button in block.buttons %}
+          <a href="{{ button.link }}" class="button">
+            {{ button.label }}
+          </a>
+        {% endfor %}
+    </div>
+</section>

@@ -10,7 +10,7 @@ theme: &THEME
   label: 'Theme'
   name: 'theme'
   widget: 'select'
-  options: ['light', 'nile']
+  options: ['light', 'slate', 'winterSlate', 'warmSlate', 'lightGold', 'dark', 'secondary']
   required: false
 
 blocks: &BLOCKS
@@ -18,13 +18,6 @@ blocks: &BLOCKS
   name: 'blocks'
   widget: 'list'
   types:
-    - label: 'Text'
-      name: 'text'
-      widget: object
-      fields:
-        - { label: 'Content', name: 'content', widget: 'markdown' }
-        - { label: 'Spacing Top', name: 'spacingtop', widget: 'string', required: false }
-        - { label: 'Spacing Bottom', name: 'spacingbottom', widget: 'string', required: false }
     - label: 'Hero'
       name: 'hero'
       widget: object
@@ -41,6 +34,37 @@ blocks: &BLOCKS
           fields:
             - { label: 'Label', name: 'label', widget: 'string' }
             - { label: 'Link', name: 'link', widget: 'string' }
+    - label: 'Text'
+      name: 'text'
+      widget: object
+      fields:
+        - { label: 'Eyebrow', name: 'eyebrow', widget: 'string' }
+        - { label: 'Content', name: 'content', widget: 'markdown' }
+        - label: 'Buttons'
+          name: 'buttons'
+          widget: 'list'
+          fields:
+            - { label: 'Label', name: 'label', widget: 'string' }
+            - { label: 'Link', name: 'link', widget: 'string' }
+    - label: 'Call to action'
+      name: 'cta'
+      widget: object
+      fields:
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: 'Text', name: 'text', widget: 'string' }
+        - label: 'Button'
+          name: 'button'
+          widget: 'object'
+          required: false
+          fields:
+            - { label: 'Button Label', name: 'label', widget: 'string', required: false }
+            - { label: 'Button URL', name: 'url', widget: 'string', required: false }
+        - *THEME
+        - label: 'Background'
+          name: 'background'
+          widget: 'select'
+          options: ['light', 'slate', 'winterSlate', 'warmSlate', 'lightGold', 'dark', 'secondary']
+          required: false
 
 
 meta: &META

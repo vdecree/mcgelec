@@ -3,7 +3,7 @@
     padding: 12px 30px;
     border-radius: var(--radius-small);
     background: var(--color-primary);
-    color: currentColor;
+    color: var(--color-light);
     text-decoration: none;
     transition: background 0.1s;
 }

@@ -1,0 +1,23 @@
+<section class="reviews [ p-600 ]">
+    <div class="wrapper">
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                {% for review in reviews.items -%}
+                <li class="glide__slide quote">
+                <blockquote>
+                    <div class="quote__content">
+                        {{ review.review }}
+                    </div>
+                    <cite class="quote__cite">
+                        <p>{{ review.name }}<br>
+                        {{ review.position }}</p>
+                    </cite>
+                </blockquote>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

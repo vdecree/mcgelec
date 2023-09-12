@@ -11,6 +11,7 @@ theme: &THEME
   name: 'theme'
   widget: 'select'
   options: ['light', 'slate', 'winterSlate', 'warmSlate', 'lightGold', 'dark', 'secondary']
+  hint: 'This is used to colour the top half of the block'
   required: false
 
 blocks: &BLOCKS
@@ -34,6 +35,12 @@ blocks: &BLOCKS
           fields:
             - { label: 'Label', name: 'label', widget: 'string' }
             - { label: 'Link', name: 'link', widget: 'string' }
+    - label: 'Top Reviews'
+      name: 'reviews'
+      widget: object
+      fields:
+        - { label: 'title', name: 'title', widget: 'string' }
+        - { label: 'desc', name: 'desc', widget: 'markdown' }
     - label: 'Text'
       name: 'text'
       widget: object
@@ -64,6 +71,7 @@ blocks: &BLOCKS
           name: 'background'
           widget: 'select'
           options: ['light', 'slate', 'winterSlate', 'warmSlate', 'lightGold', 'dark', 'secondary']
+          hint: 'This is used as a background for the lower half of the block'
           required: false
 
 
@@ -119,3 +127,17 @@ collections:
       - *META
       - *SOCIAL
       - *NAVIGATION
+  - label: "Globals"
+    name: "globals"
+    files:
+      - label: "Reviews"
+        name: "reviews"
+        file: "src/_data/reviews.json"
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Position', name: 'position', widget: 'string' }
+              - { label: 'Review', name: 'review', widget: 'markdown' }

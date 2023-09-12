@@ -11,6 +11,7 @@ sitemapIgnore: true
   {% include '../_includes/css/composition/grid.css' %}
   {% include '../_includes/css/composition/stack.css' %}
   {% include '../_includes/css/composition/flow.css' %}
+  {% include '../_includes/css/composition/glide.css' %}
 
   {% include '../_includes/css/global/type.css' %}
   {% include '../_includes/css/global/tokens.css' %}
@@ -21,5 +22,6 @@ sitemapIgnore: true
   {% include '../_includes/css/global/brand_mark.css' %}
   {% include '../_includes/css/global/block.css' %}
   {% include '../_includes/css/global/cta.css' %}
+  {% include '../_includes/css/global/text.css' %}
 {%- endset -%}
 {{ css | cssmin | safe }}

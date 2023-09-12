@@ -44,7 +44,8 @@ module.exports = {
     },
     fontFamily: {
       serif: ['Sentient-Variable', 'serif'],
-      sans: ['Schibsted Grotesk', 'sans-serif']
+      sans: ['Schibsted Grotesk', 'sans-serif'],
+      anuphan: ['Anuphan', 'sans-serif' ]
     },
     screens: {
       'sm': '640px',
